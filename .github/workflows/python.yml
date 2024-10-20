@@ -26,8 +26,13 @@ jobs:
 
     strategy:
       matrix:
-        tag: [alpine, 3.11-alpine, 3.12-alpine]
-        dockerfile: [Dockerfile, Dockerfile.3.11, Dockerfile.3.12]
+        include:
+          - tag: alpine
+            dockerfile: Dockerfile
+          - tag: 3.11-alpine
+            dockerfile: Dockerfile.3.11
+          - tag: 3.12-alpine
+            dockerfile: Dockerfile.3.12
 
     steps:
       - name: Checkout repository

@@ -23,8 +23,11 @@ jobs:
 
     strategy:
       matrix:
-        tag: [alpine, 7.4-alpine]
-        dockerfile: [Dockerfile, Dockerfile.7.4]
+        include:
+          - tag: alpine
+            dockerfile: Dockerfile
+          - tag: 7.4-alpine
+            dockerfile: Dockerfile.7.4
 
     steps:
       - name: Checkout repository
