@@ -1,0 +1,12 @@
+[
+  {
+    "action_name": "Gmpy2",
+    "tag": "alpine"
+  },
+  {
+    "action_name": "Gmpy2 Python 3.11",
+    "action_file": "gmpy2-3.11",
+    "dockerfile": "Dockerfile.3.11",
+    "tag": "3.11-alpine"
+  }
+]
