@@ -1,9 +1,12 @@
 FROM python:alpine
 
-RUN apk add --no-cache socat && \
-    adduser -D -h /home/ctf ctf
+RUN apk add --no-cache socat && adduser -D -h /home/ctf ctf
+
+COPY --chown=ctf:ctf src/chall.py /home/ctf/chall.py
+COPY --chown=ctf:ctf --chmod=500 src/init.sh /init.sh
+COPY --chown=ctf:ctf --chmod=500 src/run.sh /run.sh
 
 USER ctf
-WORKDIR /home/ctf/
+WORKDIR /home/ctf
 
-CMD ["sleep", "infinity"]
+CMD [ "/init.sh" ]

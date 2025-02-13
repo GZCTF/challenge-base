@@ -1,0 +1,12 @@
+[
+  {
+    "action_name": "Python",
+    "tag": "alpine"
+  },
+  {
+    "action_name": "Python 3.11",
+    "action_file": "python-3.11",
+    "dockerfile": "Dockerfile.3.11",
+    "tag": "3.11-alpine"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "action_name": "Read Flag"
+  },
+  {
+    "action_file": "readflag-minimal",
+    "action_name": "Read Flag - Minimal",
+    "dockerfile": "Dockerfile.minimal",
+    "tag": "minimal"
+  }
+]

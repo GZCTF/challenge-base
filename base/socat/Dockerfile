@@ -1,9 +1,6 @@
-FROM python:3.12-alpine
+FROM alpine:latest
 
 RUN apk add --no-cache socat && \
     adduser -D -h /home/ctf ctf
-
-USER ctf
-WORKDIR /home/ctf/
 
 CMD ["sleep", "infinity"]

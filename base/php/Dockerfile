@@ -3,6 +3,7 @@ FROM php:fpm-alpine
 RUN apk add --no-cache shadow nginx && \
     usermod -u 1000 www-data && \
     groupmod -g 1000 www-data && \
+    sed -i 's/worker_processes auto;/worker_processes 1;/' /etc/nginx/nginx.conf && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
