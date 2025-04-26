@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "base/python/**"
+      - "updates/tier1.md"
       - ".github/workflows/base.python-3.11.yml"
   workflow_dispatch:
 

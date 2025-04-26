@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "base/socat/**"
+      - "updates/tier1.md"
       - ".github/workflows/base.socat.yml"
   workflow_dispatch:
 

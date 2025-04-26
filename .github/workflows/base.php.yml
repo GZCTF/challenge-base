@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "base/php/**"
+      - "updates/tier1.md"
       - ".github/workflows/base.php.yml"
   workflow_dispatch:
 

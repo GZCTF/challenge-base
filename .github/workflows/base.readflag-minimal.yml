@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "base/readflag/**"
+      - "updates/tier1.md"
       - ".github/workflows/base.readflag-minimal.yml"
   workflow_dispatch:
 

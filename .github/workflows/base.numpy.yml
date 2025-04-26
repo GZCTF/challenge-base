@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "base/numpy/**"
+      - "updates/tier1.md"
       - ".github/workflows/base.numpy.yml"
   workflow_dispatch:
 

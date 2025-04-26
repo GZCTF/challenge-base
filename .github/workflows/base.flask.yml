@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "base/flask/**"
+      - "updates/tier1.md"
       - ".github/workflows/base.flask.yml"
   workflow_dispatch:
 

@@ -28,6 +28,7 @@ DEFAULT_CONFIG = {
     "action_file": None,
     "dockerfile": "Dockerfile",
     "depends_on": None,
+    "tier": 1
 }
 
 
@@ -48,6 +49,7 @@ def gen_action(chall_dir, name):
             conf["depends_on"] = []
 
         conf["depends_on"].append(f"base/{conf['name']}/**")
+        conf["depends_on"].append(f"updates/tier{conf['tier']}.md")
 
         info(f"Generating action: {json.dumps(conf, indent=2)}")
 
