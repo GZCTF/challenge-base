@@ -6,6 +6,7 @@ on:
     paths:
       - "base/php/**"
       - "base/php-mariadb/**"
+      - "updates/tier2.md"
       - ".github/workflows/base.php-7.4-mariadb.yml"
   workflow_dispatch:
 

@@ -1,12 +1,21 @@
 [
   {
     "action_name": "Gmpy2",
-    "tag": "alpine"
+    "tag": "alpine",
+    "tier": 2
   },
   {
     "action_name": "Gmpy2 Python 3.11",
     "action_file": "gmpy2-3.11",
     "dockerfile": "Dockerfile.3.11",
-    "tag": "3.11-alpine"
+    "tag": "3.11-alpine",
+    "tier": 2
+  },
+  {
+    "action_name": "Gmpy2 Python 3.12",
+    "action_file": "gmpy2-3.12",
+    "dockerfile": "Dockerfile.3.12",
+    "tag": "3.12-alpine",
+    "tier": 2
   }
 ]

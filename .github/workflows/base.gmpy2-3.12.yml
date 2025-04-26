@@ -1,19 +1,18 @@
-name: PHP 8 with MariaDB
+name: Gmpy2 Python 3.12
 
 on:
   push:
     branches: ["main"]
     paths:
-      - "base/php/**"
-      - "base/php-mariadb/**"
+      - "base/gmpy2/**"
       - "updates/tier2.md"
-      - ".github/workflows/base.php-mariadb.yml"
+      - ".github/workflows/base.gmpy2-3.12.yml"
   workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
-  NAME: php-mariadb
-  TAG: alpine
+  NAME: gmpy2
+  TAG: 3.12-alpine
 
 jobs:
   build-and-push-image:
@@ -45,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: base/${{ env.NAME }}
-          file: base/${{ env.NAME }}/Dockerfile
+          file: base/${{ env.NAME }}/Dockerfile.3.12
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
@@ -57,7 +56,7 @@ jobs:
       contents: read
       packages: write
     concurrency:
-      group: cleanup-images-php-mariadb
+      group: cleanup-images-gmpy2
     steps:
       - name: Get lower case repository name
         id: lower_repo

@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "base/gmpy2/**"
+      - "updates/tier2.md"
       - ".github/workflows/base.gmpy2.yml"
   workflow_dispatch:
 
