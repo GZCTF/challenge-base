@@ -1,18 +1,18 @@
-name: Read Flag
+name: Python 3.13
 
 on:
   push:
     branches: ["main"]
     paths:
-      - "base/readflag/**"
+      - "base/python/**"
       - "updates/tier1.md"
-      - ".github/workflows/base.readflag.yml"
+      - ".github/workflows/base.python-3.13.yml"
   workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
-  NAME: readflag
-  TAG: latest
+  NAME: python
+  TAG: 3.13-alpine
 
 jobs:
   build-and-push-image:
@@ -50,8 +50,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: base/${{ env.NAME }}
-          file: base/${{ env.NAME }}/Dockerfile
-          
+          file: base/${{ env.NAME }}/Dockerfile.3.13
+          platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
@@ -63,7 +63,7 @@ jobs:
       contents: read
       packages: write
     concurrency:
-      group: cleanup-images-readflag
+      group: cleanup-images-python
     steps:
       - name: Get lower case repository name
         id: lower_repo

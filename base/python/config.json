@@ -14,5 +14,11 @@
     "action_file": "python-3.12",
     "dockerfile": "Dockerfile.3.12",
     "tag": "3.12-alpine"
+  },
+  {
+    "action_name": "Python 3.13",
+    "action_file": "python-3.13",
+    "dockerfile": "Dockerfile.3.13",
+    "tag": "3.13-alpine"
   }
 ]

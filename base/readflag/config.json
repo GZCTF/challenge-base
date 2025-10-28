@@ -1,11 +1,13 @@
 [
   {
-    "action_name": "Read Flag"
+    "action_name": "Read Flag",
+    "support_multi_arch": false
   },
   {
     "action_file": "readflag-minimal",
     "action_name": "Read Flag - Minimal",
     "dockerfile": "Dockerfile.minimal",
-    "tag": "minimal"
+    "tag": "minimal",
+    "support_multi_arch": false
   }
 ]

@@ -28,7 +28,8 @@ DEFAULT_CONFIG = {
     "action_file": None,
     "dockerfile": "Dockerfile",
     "depends_on": None,
-    "tier": 1
+    "tier": 1,
+    "support_multi_arch": True
 }
 
 
@@ -62,6 +63,13 @@ def gen_action(chall_dir, name):
             "#<DEPENDENCY_PATHS>",
             "\n      ".join([f'- "{i}"' for i in conf["depends_on"]]),
         )
+
+        # Handle multi-arch platforms
+        if conf["support_multi_arch"]:
+            platforms_line = "platforms: linux/amd64,linux/arm64"
+        else:
+            platforms_line = ""
+        result = result.replace("#<PLATFORMS>", platforms_line)
 
         file_path = f".github/workflows/base.{conf['action_file']}.yml"
         info(f"Writing action to {file_path}")
