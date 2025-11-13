@@ -7,4 +7,4 @@ unset GZCTF_FLAG
 cp /bin/busybox /chroot
 setcap cap_sys_chroot=ep /chroot
 
-socat TCP-LISTEN:7000,reuseaddr,fork EXEC:"su ctf -c '/chroot /home/ctf /pwn'",stderr
+su ctf -c 'socat TCP-LISTEN:7000,reuseaddr,fork EXEC:"/chroot /home/ctf /pwn",stderr'
