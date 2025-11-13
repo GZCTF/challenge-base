@@ -1,18 +1,19 @@
-name: Echo - Example
+name: Confine
 
 on:
   push:
     branches: ["main"]
     paths:
-      - "base/echo/**"
-      - "updates/tier1.md"
-      - ".github/workflows/base.echo.yml"
+      - "socat"
+      - "base/confine/**"
+      - "updates/tier2.md"
+      - ".github/workflows/base.confine.yml"
   workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
-  NAME: echo
-  TAG: latest
+  NAME: confine
+  TAG: alpine
 
 jobs:
   build-and-push-image:
@@ -63,7 +64,7 @@ jobs:
       contents: read
       packages: write
     concurrency:
-      group: cleanup-images-echo
+      group: cleanup-images-confine
     steps:
       - name: Get lower case repository name
         id: lower_repo

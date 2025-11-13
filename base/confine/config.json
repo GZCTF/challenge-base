@@ -1,0 +1,11 @@
+[
+  {
+    "action_name": "Confine",
+    "action_file": "confine",
+    "dockerfile": "Dockerfile",
+    "tag": "alpine",
+    "tier": 2,
+    "support_multi_arch": true,
+    "depends_on": ["socat"]
+  }
+]
